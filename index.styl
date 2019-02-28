@@ -1,0 +1,258 @@
+*, :after, :before
+  box-sizing border-box
+
+body
+  font-family -apple-system,BlinkMacSystemFont,San Francisco,Helvetica Neue,Helvetica,Ubuntu,Google Sans,Roboto,Noto,Segoe UI,Arial,sans-serif
+  margin 0
+  color #111
+
+h1
+  font-size 32px
+  line-height 42px
+  text-align center
+  margin 40px 0
+
+a
+  cursor pointer
+  color #0076FF
+  text-decoration none
+  transition all 0.2s ease
+  border-bottom 1px solid white
+  &:hover
+    border-bottom 1px solid #0076FF
+
+button
+  -webkit-appearance none
+  width 100%
+  border 1px solid rgba(0,0,0,0.12)
+  padding 12px
+  border-radius 7px
+  font-size inherit
+  background #111
+  color #fff
+  cursor pointer
+  &:disabled
+    color #ccc
+    background rgba(0,0,0,.08)
+    border 1px solid transparent
+    cursor progress
+
+.hide
+  display none !important
+
+.container
+  display flex
+  flex-flow column
+  width 100%
+  margin 0 auto
+  padding 0 24px
+
+.fields
+  width 100%
+  margin-bottom 24px
+  label
+    margin-bottom 12px
+  select,
+  input
+    -webkit-appearance none
+    width 100%
+    background #fff
+    height 40px
+    border 1px solid 
+    border-color rgba(0, 0, 0, .12)
+    border-radius 7px
+    padding 0 12px
+    font-size inherit
+    transition all 150ms ease-in
+    &:focus, &:active
+      outline none
+      box-shadow 0 1px 4px 0 rgba(0,0,0,.08)
+    &:disabled
+      cursor progress
+      color #ccc
+      background rgba(0,0,0,.08)
+      border 1px solid transparent
+.field
+  display flex
+  align-items flex-start
+  justify-content start
+  flex-flow column
+  &:not(:last-child)
+    margin-bottom 24px
+
+.result
+  width 100%
+  img
+    box-shadow 0 1px 5px 0 rgba(0, 0, 0, .08)
+    border-radius 7px
+    width 100%
+    height auto
+
+footer
+  text-align center
+  padding 48px 12px 24px
+
+small
+  font-size 80%
+  opacity .6
+
+@media screen and (min-width: 768px)
+  button
+    width 240px
+
+  .container
+    flex-flow row
+
+  .fields
+    width 40%
+    min-width 410px
+    padding-right 24px
+    label
+      margin-bottom 0
+      margin-right 12px
+    select,
+    input
+      width 240px
+
+  .result
+    width 60%
+    max-width 800px
+
+  .field
+    align-items center
+    justify-content flex-end
+    flex-flow row
+
+/**
+ * placeholder-loading v0.2.0
+ * Author: Zalog (https://www.zalog.ro/)
+ * License: MIT
+ **/
+.ph-item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 30px 15px 15px 15px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 7px; }
+  .ph-item, .ph-item *,
+  .ph-item ::after, .ph-item ::before {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
+  .ph-item::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 50%;
+    z-index: 1;
+    width: 500%;
+    margin-left: -250%;
+    -webkit-animation: phAnimation 0.8s linear infinite;
+            animation: phAnimation 0.8s linear infinite;
+    background: -webkit-gradient(linear, left top, right top, color-stop(46%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0.35)), color-stop(54%, rgba(255, 255, 255, 0))) 50% 50%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 46%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 54%) 50% 50%; }
+  .ph-item > * {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    padding-right: 15px;
+    padding-left: 15px; }
+
+.ph-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 7.5px; }
+  .ph-row div {
+    height: 10px;
+    margin-bottom: 7.5px;
+    background-color: #ced4da; }
+  .ph-row .big,
+  .ph-row.big div {
+    height: 20px;
+    margin-bottom: 15px; }
+  .ph-row .empty {
+    background-color: rgba(255, 255, 255, 0); }
+
+.ph-col-2 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 16.66667%;
+          flex: 0 0 16.66667%; }
+
+.ph-col-4 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 33.33333%;
+          flex: 0 0 33.33333%; }
+
+.ph-col-6 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%; }
+
+.ph-col-8 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 66.66667%;
+          flex: 0 0 66.66667%; }
+
+.ph-col-10 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 83.33333%;
+          flex: 0 0 83.33333%; }
+
+.ph-col-12 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%; }
+
+.ph-avatar {
+  position: relative;
+  width: 100%;
+  min-width: 60px;
+  background-color: #ced4da;
+  margin-bottom: 15px;
+  border-radius: 50%;
+  overflow: hidden; }
+  .ph-avatar::before {
+    content: " ";
+    display: block;
+    padding-top: 100%; }
+
+.ph-picture {
+  border-radius: 7px;
+  width: 100%;
+  height: 320px;
+  background-color: #ccc;
+  margin-bottom: 15px; }
+
+@-webkit-keyframes phAnimation {
+  0% {
+    -webkit-transform: translate3d(-30%, 0, 0);
+            transform: translate3d(-30%, 0, 0); }
+  100% {
+    -webkit-transform: translate3d(30%, 0, 0);
+            transform: translate3d(30%, 0, 0); } }
+
+@keyframes phAnimation {
+  0% {
+    -webkit-transform: translate3d(-30%, 0, 0);
+            transform: translate3d(-30%, 0, 0); }
+  100% {
+    -webkit-transform: translate3d(30%, 0, 0);
+            transform: translate3d(30%, 0, 0); } }

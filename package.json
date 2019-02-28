@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "dev": "parcel index.pug",
+    "build": "parcel build index.pug --no-source-maps",
+    "now-build": "npm run build"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.11.0",
+    "pug": "^2.0.3",
+    "stylus": "^0.54.5"
+  }
+}

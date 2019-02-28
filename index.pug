@@ -1,0 +1,57 @@
+doctype html
+
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title Image to Primitive
+    script(src='index.js' defer)
+    link(rel='stylesheet' href='./index.styl')
+  body
+    h1 Image to Primitive
+    .container
+      .fields
+        .field
+          label(for='imgInput') Image
+          input.js-input(type='text' id='imgInput' value='https://sophearak.me/static/profile.jpg')
+        .field
+          label(for='modeOption') Mode
+          select.js-input(name='modeOption' id='modeOption')
+            option(value='0') Combo
+            option(value='1' selected) Triangle
+            option(value='2') Rect
+            option(value='3') Ellipse
+            option(value='4') Circle
+            option(value='5') Rotated Rect
+            option(value='6') Beziers
+            option(value='7') Rotated Ellipse
+            option(value='8') Polygon
+        .field
+          label(for='shapeOption') Number of shapes
+          select.js-input(name='shapeOption' id='shapeOption')
+            option(value='8') 8 shapes
+            option(value='16' selected) 16 shapes
+            option(value='32') 32 shapes
+        .field
+          label(for='typeOption') Output
+          select.js-input(name='typeOption' id='typeOption')
+            option(value='png') PNG
+            option(value='jpg' selected) JPG
+            option(value='svg') SVG
+        .field
+          button.js-button Generate
+      .result
+        img(src='./assets/primitive.jpg' id='imgResult')
+        .hide.ph-item.js-loading
+          .ph-col-12
+            .ph-picture
+    footer
+      h2 What is this?
+      p This is a service that reproducing image with geometric primitives.
+      p Find out how it work by visting
+        | 
+        a(href="https://github.com/sophearak/image-to-primitive") Github
+      small Proudly hosted on
+        | 
+        a(href="https://zeit.co/now") ▲ZEIT Now
