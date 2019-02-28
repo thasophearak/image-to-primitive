@@ -68,7 +68,7 @@ func check(err error) {
 	}
 }
 
-// Hello handler
+// H handler
 func H(w http.ResponseWriter, r *http.Request) {
 
 	startParams := time.Now()
@@ -76,7 +76,7 @@ func H(w http.ResponseWriter, r *http.Request) {
 	imgURL := r.URL.Query().Get("img")
 	m := r.URL.Query().Get("mode")
 	n := r.URL.Query().Get("shape")
-	box := packr.New("assets", "../assets")
+	box := packr.New("assets", "assets")
 	invalidURL, _ := box.FindString("invalid-url.jpg")
 	maxShape, _ := box.FindString("max-shape.jpg")
 	somethingWrong, _ := box.FindString("something-wrong.jpg")
