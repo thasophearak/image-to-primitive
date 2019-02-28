@@ -17,28 +17,37 @@ html(lang='en')
           input.js-input(type='text' id='imgInput' value='https://sophearak.me/static/profile.jpg')
         .field
           label(for='modeOption') Mode
-          select.js-input(name='modeOption' id='modeOption')
-            option(value='0') Combo
-            option(value='1' selected) Triangle
-            option(value='2') Rect
-            option(value='3') Ellipse
-            option(value='4') Circle
-            option(value='5') Rotated Rect
-            option(value='6') Beziers
-            option(value='7') Rotated Ellipse
-            option(value='8') Polygon
+          .with-icon
+            select.js-input(name='modeOption' id='modeOption')
+              option(value='0') Combo
+              option(value='1' selected) Triangle
+              option(value='2') Rect
+              option(value='3') Ellipse
+              option(value='4') Circle
+              option(value='5') Rotated Rect
+              option(value='6') Beziers
+              option(value='7') Rotated Ellipse
+              option(value='8') Polygon
+            svg
+              use(xlink:href='#down')
         .field
           label(for='shapeOption') Number of shapes
-          select.js-input(name='shapeOption' id='shapeOption')
-            option(value='8') 8 shapes
-            option(value='16' selected) 16 shapes
-            option(value='32') 32 shapes
+          .with-icon
+            select.js-input(name='shapeOption' id='shapeOption')
+              option(value='8') 8 shapes
+              option(value='16' selected) 16 shapes
+              option(value='32') 32 shapes
+            svg
+              use(xlink:href='#down')
         .field
           label(for='typeOption') Output
-          select.js-input(name='typeOption' id='typeOption')
-            option(value='png') PNG
-            option(value='jpg' selected) JPG
-            option(value='svg') SVG
+          .with-icon
+            select.js-input(name='typeOption' id='typeOption')
+              option(value='png') PNG
+              option(value='jpg' selected) JPG
+              option(value='svg') SVG
+            svg
+              use(xlink:href='#down')
         .field
           button.js-button Generate
       .result
@@ -51,7 +60,15 @@ html(lang='en')
       p This is a service that reproducing image with geometric primitives.
       p Find out how it work by visting
         | 
-        a(href="https://github.com/sophearak/image-to-primitive") Github
+        a(href='https://github.com/sophearak/image-to-primitive') Github
       small Proudly hosted on
         | 
-        a(href="https://zeit.co/now") ▲ZEIT Now
+        a(href='https://zeit.co/now') ▲ZEIT Now
+    svg(xmlns='http://www.w3.org/2000/svg')
+      defs
+        symbol(id='download' viewBox='0 0 24 24')
+          path(d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4')
+          polyline(points='7 10 12 15 17 10')
+          line(x1='12' y1='15' x2='12' y2='3')
+        symbol(id='down' viewBox='0 0 24 24')
+          polyline(points='6 9 12 15 18 9')
