@@ -28,8 +28,8 @@ html(lang='en')
               option(value='6') Beziers
               option(value='7') Rotated Ellipse
               option(value='8') Polygon
-            svg
-              use(xlink:href='#down')
+            svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24')
+              polyline(points='6 9 12 15 18 9')
         .field
           label(for='shapeOption') Number of shapes
           .with-icon
@@ -37,8 +37,8 @@ html(lang='en')
               option(value='8') 8 shapes
               option(value='16' selected) 16 shapes
               option(value='32') 32 shapes
-            svg
-              use(xlink:href='#down')
+            svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24')
+              polyline(points='6 9 12 15 18 9')
         .field
           label(for='typeOption') Output
           .with-icon
@@ -46,8 +46,8 @@ html(lang='en')
               option(value='png') PNG
               option(value='jpg' selected) JPG
               option(value='svg') SVG
-            svg
-              use(xlink:href='#down')
+            svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24')
+              polyline(points='6 9 12 15 18 9')
         .field
           button.js-button Generate
         .field
@@ -67,11 +67,3 @@ html(lang='en')
       small Proudly hosted on
         | 
         a(href='https://zeit.co/now') ▲ZEIT Now
-    svg(xmlns='http://www.w3.org/2000/svg')
-      defs
-        symbol(id='download' viewBox='0 0 24 24')
-          path(d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4')
-          polyline(points='7 10 12 15 17 10')
-          line(x1='12' y1='15' x2='12' y2='3')
-        symbol(id='down' viewBox='0 0 24 24')
-          polyline(points='6 9 12 15 18 9')

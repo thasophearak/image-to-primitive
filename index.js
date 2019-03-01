@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   btn.addEventListener('click', () => {
     if (imgInput.value === 'https://sophearak.me/static/profile.jpg') {
-      const params = `https://image-to-primitive-gd1lniddr.now.sh/?img=${
+      const url = `${window.location.origin}/primitive.go?img=${
         imgInput.value
       }&mode=${mode[mode.selectedIndex].value}&shape=${
         shape[shape.selectedIndex].value
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       disableForm(true);
 
       imgResult.setAttribute('src', '');
-      imgResult.setAttribute('src', params);
+      imgResult.setAttribute('src', url);
 
       imgResult.addEventListener('load', () => {
         disableForm(false);
@@ -49,20 +49,4 @@ document.addEventListener('DOMContentLoaded', () => {
       input.removeAttribute('disabled');
     });
   }
-
-  // imgInput.addEventListener('blur', event => {
-  //   if (event.target.value !== 'https://sophearak.me/static/profile.jpg') {
-  //     getPrimitive();
-  //   }
-  // });
-
-  // function getPrimitive() {
-  //   imgResult.setAttribute('src', '');
-  //   const params = `https://image-to-primitive-gd1lniddr.now.sh/?img=${
-  //     imgInput.value
-  //   }&mode=${mode[mode.selectedIndex].value}&shape=${
-  //     shape[shape.selectedIndex].value
-  //   }`;
-  //   imgResult.setAttribute('src', params);
-  // }
 });

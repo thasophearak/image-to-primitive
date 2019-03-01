@@ -2,9 +2,15 @@
   "version": 2,
   "builds": [
     {
-      "src": "index.go",
+      "src": "package.json",
+      "use": "@now/static-build"
+    },
+    {
+      "src": "primitive.go",
       "use": "now-go-mod-builder",
-      "config": { "maxLambdaSize": "20mb" }
+      "config": {
+        "maxLambdaSize": "20mb"
+      }
     }
   ]
 }
