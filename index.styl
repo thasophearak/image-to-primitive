@@ -64,7 +64,9 @@ svg
   select,
   input
     -webkit-appearance none
+    outline 0
     width 100%
+    max-width 100%
     background #fff
     height 40px
     border 1px solid 
@@ -81,8 +83,11 @@ svg
       color #ccc
       background rgba(0,0,0,.08)
       border 1px solid transparent
+      +svg
+        color #ccc
   .with-icon
     position relative
+    width 100%
     svg
       position absolute
       right 8px
@@ -129,7 +134,8 @@ small
     select,
     input
       width 240px
-
+    .with-icon
+      width auto
   .result
     width 60%
     max-width 800px
