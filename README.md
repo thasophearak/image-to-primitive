@@ -2,8 +2,6 @@
   <img src="https://raw.githubusercontent.com/sophearak/image-to-primitive/master/assets/cover.png" height="400" />
 </p>
 
-# Image to Primitive
-
 Serverless service reproducing images with primitive shapes written in [Golang](https://golang.org/).
 
 ## Deploy your own
