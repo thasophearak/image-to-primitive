@@ -5,26 +5,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const imgInput = $('#imgInput');
   const mode = $('#modeOption');
   const shape = $('#shapeOption');
+  const output = $('#typeOption');
   const btn = $('button');
   const imgResult = $('#imgResult');
 
   btn.addEventListener('click', () => {
-    if (imgInput.value === 'https://sophearak.me/static/profile.jpg') {
-      const url = `${window.location.origin}/primitive.go?img=${
-        imgInput.value
-      }&mode=${mode[mode.selectedIndex].value}&shape=${
-        shape[shape.selectedIndex].value
-      }`;
+    const url = `${window.location.origin}/primitive.go?img=${
+      imgInput.value
+    }&mode=${mode[mode.selectedIndex].value}&shape=${
+      shape[shape.selectedIndex].value
+    }&output=${output[output.selectedIndex].value}`;
 
-      disableForm(true);
+    disableForm(true);
 
-      imgResult.setAttribute('src', '');
-      imgResult.setAttribute('src', url);
+    imgResult.setAttribute('src', '');
+    imgResult.setAttribute('src', url);
 
-      imgResult.addEventListener('load', () => {
-        disableForm(false);
-      });
-    }
+    imgResult.addEventListener('load', () => {
+      disableForm(false);
+    });
   });
 
   function disableForm(disable) {

@@ -6,6 +6,7 @@ import (
 	"image"
 	_ "image-to-primitive/packrd"
 	"image/jpeg"
+	"image/png"
 	"io/ioutil"
 	"log"
 	"math/rand"
@@ -77,6 +78,7 @@ func H(w http.ResponseWriter, r *http.Request) {
 	imgURL := r.URL.Query().Get("img")
 	m := r.URL.Query().Get("mode")
 	n := r.URL.Query().Get("shape")
+	o := r.URL.Query().Get("output")
 	box := packr.New("assets", "../assets")
 	invalidURL, _ := box.FindString("invalid-url.jpg")
 	maxShape, _ := box.FindString("max-shape.jpg")
@@ -179,8 +181,6 @@ func H(w http.ResponseWriter, r *http.Request) {
 					jpeg.Encode(buffer, model.Context.Image(), nil)
 					endPrimitive := time.Since(startPrimitive)
 
-					w.Header().Set("Content-Type", reqImg.Header.Get("Content-Type"))
-					w.Header().Set("Content-Length", strconv.Itoa(len(buffer.Bytes())))
 					w.Header().Set("Timing-Parsed-Params", fmt.Sprintf("%v", endParams))
 					w.Header().Set("Timing-HTTP-Get", fmt.Sprintf("%v", endHTTPGet))
 					w.Header().Set("Timing-Read-Req-Body", fmt.Sprintf("%v", endReadReqBody))
@@ -188,7 +188,22 @@ func H(w http.ResponseWriter, r *http.Request) {
 					w.Header().Set("Timing-Primitive", fmt.Sprintf("%v", endPrimitive))
 					w.Header().Set("Timing-Resize", fmt.Sprintf("%v", endResize))
 
-					w.Write(buffer.Bytes())
+					switch o {
+					case "jpg":
+						w.Header().Set("Content-Type", "image/jpeg")
+						jpeg.Encode(buffer, model.Context.Image(), nil)
+						w.Header().Set("Content-Length", strconv.Itoa(len(buffer.Bytes())))
+						w.Write(buffer.Bytes())
+					case "png":
+						w.Header().Set("Content-Type", "image/png")
+						png.Encode(buffer, model.Context.Image())
+						w.Header().Set("Content-Length", strconv.Itoa(len(buffer.Bytes())))
+						w.Write(buffer.Bytes())
+					case "svg":
+						w.Header().Set("Content-Type", "image/svg+xml")
+						w.Header().Set("Content-Length", strconv.Itoa(len(model.SVG())))
+						w.Write([]byte(model.SVG()))
+					}
 				}
 			}
 		}
