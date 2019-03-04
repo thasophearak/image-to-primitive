@@ -1,4 +1,6 @@
-[cover](./assets/cover.png?raw=true)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/sophearak/image-to-primitive/master/assets/cover.png" height="400" />
+</p>
 
 # Image to Primitive
 
@@ -20,5 +22,5 @@ Alternatively, you can do a one-click to deploy with the button below.
 Credits
 
 - Primitive by Michael Fogleman [https://github.com/fogleman/primitive](https://github.com/fogleman/primitive)
-- The Go gopher was designed by Renee French. [https://github.com/styfle/og-image](http://reneefrench.blogspot.com/)
+- The Go gopher was designed by Renee French. [http://reneefrench.blogspot.com/](http://reneefrench.blogspot.com/)
 - Go Gopher vector illustration by Hugo Arganda @argandas [http://about.me/argandas](http://about.me/argandas)
