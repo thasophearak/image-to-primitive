@@ -1,4 +1,6 @@
 {
+  "name": "image-to-primitive",
+  "alias": ["image-to-primitive.now.sh"],
   "version": 2,
   "builds": [
     {
@@ -7,10 +9,15 @@
     },
     {
       "src": "primitive.go",
-      "use": "now-go-mod-builder",
+      "use": "@now/go@canary",
       "config": {
         "maxLambdaSize": "20mb"
       }
     }
-  ]
+  ],
+  "build": {
+    "env": {
+      "GO111MODULE": "on"
+    }
+  }
 }

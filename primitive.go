@@ -1,4 +1,4 @@
-package primitive
+package main
 
 import (
 	"bytes"
@@ -79,7 +79,7 @@ func H(w http.ResponseWriter, r *http.Request) {
 	m := r.URL.Query().Get("mode")
 	n := r.URL.Query().Get("shape")
 	o := r.URL.Query().Get("output")
-	box := packr.New("assets", "../assets")
+	box := packr.New("assets", "assets")
 	invalidURL, _ := box.FindString("invalid-url.jpg")
 	maxShape, _ := box.FindString("max-shape.jpg")
 	somethingWrong, _ := box.FindString("something-wrong.jpg")
