@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/sophearak/image-to-primitive/master/assets/cover.png" height="500" />
+  <img src="https://raw.githubusercontent.com/sophearak/image-to-primitive/master/assets/cover.1.png" height="500" />
 </p>
 
 Serverless service reproducing images with primitive shapes written in [Golang](https://golang.org/).
