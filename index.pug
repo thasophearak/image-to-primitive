@@ -37,8 +37,8 @@ html(lang='en')
           .with-icon
             select.js-input(name='shapeOption' id='shapeOption')
               option(value='8') 8 shapes
-              option(value='16' selected) 16 shapes
-              option(value='32') 32 shapes
+              option(value='16') 16 shapes
+              option(value='32' selected) 32 shapes
             svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24')
               polyline(points='6 9 12 15 18 9')
         .field
@@ -54,7 +54,7 @@ html(lang='en')
           button.js-button Generate
         .field
           .note
-            p The process of reproducing image will take sometime.
+            p Please note: The image production takes a little while.
       .result
         img(src='./assets/primitive.jpg' id='imgResult')
         .hide.ph-item.js-loading
@@ -62,10 +62,16 @@ html(lang='en')
             .ph-picture
     footer
       h2 What is this?
-      p This is a service that reproducing image with geometric primitives.
-      p Find out how it work by visiting
+      p This is a service that converts an image to its geometric primitives. 
+        | It’s powered by 
+        a(href='https://zeit.co/docs/v2/deployments/official-builders/go-now-go') @now/go
+        |  with 
+        a(href='https://github.com/fogleman/primitive') primitive
+        |  package.
+      p Find out how it works on the
         | 
         a(href='https://github.com/sophearak/image-to-primitive') Github
+        |  repository.
       small Proudly hosted on
         | 
         a(href='https://zeit.co/now') ▲ZEIT Now
