@@ -9,15 +9,10 @@
     },
     {
       "src": "primitive.go",
-      "use": "@now/go@canary",
+      "use": "@now/go",
       "config": {
         "maxLambdaSize": "20mb"
       }
     }
-  ],
-  "build": {
-    "env": {
-      "GO111MODULE": "on"
-    }
-  }
+  ]
 }
